@@ -16,3 +16,9 @@ To serve, simply run these commands
 cd english-monarchs
 ng serve --open
 ```
+
+Some components were made via the following;
+
+```
+ng generate component monarchs
+```
