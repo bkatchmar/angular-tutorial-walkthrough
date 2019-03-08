@@ -1,3 +1,13 @@
 <p>
-  {{single_monarch}}
+  {{single_monarch.nm}} of {{single_monarch.hse}}
 </p>
+<div>
+  <label>Monarch Name:
+    <input [(ngModel)]="single_monarch.nm" placeholder="Name"/>
+  </label>
+</div>
+<div>
+  <label>Monarch House:
+    <input [(ngModel)]="single_monarch.hse" placeholder="Name"/>
+  </label>
+</div>
