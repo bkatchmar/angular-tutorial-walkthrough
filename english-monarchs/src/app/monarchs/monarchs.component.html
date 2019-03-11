@@ -1,13 +1,19 @@
-<p>
-  {{single_monarch.nm}} of {{single_monarch.hse}}
-</p>
-<div>
-  <label>Monarch Name:
-    <input [(ngModel)]="single_monarch.nm" placeholder="Name"/>
-  </label>
-</div>
-<div>
-  <label>Monarch House:
-    <input [(ngModel)]="single_monarch.hse" placeholder="Name"/>
-  </label>
+<h2>English Monarchs</h2>
+<ul class="heroes">
+  <li
+    *ngFor="let m of monarchs_list"
+    [class.selected]="m === selectedMonarch"
+    (click)="onSelect(m)">
+    <span class="badge">{{m.id}}</span> {{m.nm}} of {{m.hse}}
+  </li>
+</ul>
+
+<div *ngIf="selectedMonarch">
+  <h2>{{selectedMonarch.nm | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedMonarch.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedMonarch.nm" placeholder="name"/>
+    </label>
+  </div>
 </div>
