@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonarchsComponent } from './monarchs/monarchs.component';
 import { MonarchDetailComponent } from './monarch-detail/monarch-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonarchsComponent,
-    MonarchDetailComponent
+    MonarchDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

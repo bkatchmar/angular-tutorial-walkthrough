@@ -23,4 +23,5 @@ Some components and services were made via the following;
 ng generate component monarchs
 ng generate component monarch-detail
 ng generate service monarch
+ng generate component dashboard
 ```

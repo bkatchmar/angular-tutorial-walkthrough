@@ -1,0 +1,8 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let monarch of monarchs_list" class="col-1-4" routerLink="/detail/{{monarch.id}}">
+    <div class="module hero">
+      <h4>{{monarch.nm}} of {{monarch.hse}}</h4>
+    </div>
+  </a>
+</div>

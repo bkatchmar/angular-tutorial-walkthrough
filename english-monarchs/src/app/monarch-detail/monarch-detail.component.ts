@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Monarch } from '../Monarch';
+import { MonarchService } from '../monarch.service';
 
 @Component({
   selector: 'app-monarch-detail',
@@ -9,8 +12,18 @@ import { Monarch } from '../Monarch';
 export class MonarchDetailComponent implements OnInit {
   @Input() monarch: Monarch;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private monarchService: MonarchService, private location: Location) {}
+  
+  ngOnInit(): void {
+    this.getMonarch();
+  }
+  
+  getMonarch(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.monarchService.getMonarch(id).subscribe(m => this.monarch = m);
+  }
 
-  ngOnInit() { }
-
+  goBack(): void {
+    this.location.back();
+  }
 }

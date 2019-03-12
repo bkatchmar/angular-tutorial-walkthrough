@@ -1,10 +1,8 @@
 <h2>English Monarchs</h2>
 <ul class="heroes">
-  <li
-    *ngFor="let m of monarchs_list"
-    [class.selected]="m === selectedMonarch"
-    (click)="onSelect(m)">
-    <span class="badge">{{m.id}}</span> {{m.nm}} of {{m.hse}}
+  <li *ngFor="let m of monarchs_list">
+    <a routerLink="/detail/{{m.id}}">
+      <span class="badge">{{m.id}}</span> {{m.nm}} of {{m.hse}}
+    </a>
   </li>
 </ul>
-<app-monarch-detail [monarch]="selectedMonarch"></app-monarch-detail>

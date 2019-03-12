@@ -1,5 +1,5 @@
 <div *ngIf="monarch">
-  <h2>{{monarch.nm | uppercase}} Details</h2>
+  <h2>{{monarch.nm | uppercase}} of {{monarch.hse}} Details</h2>
   <div><span>id: </span>{{monarch.id}}</div>
   <div>
     <label>name:
@@ -7,3 +7,4 @@
     </label>
   </div>
 </div>
+<button (click)="goBack()">go back</button>
