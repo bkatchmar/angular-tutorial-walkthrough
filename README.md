@@ -17,8 +17,10 @@ cd english-monarchs
 ng serve --open
 ```
 
-Some components were made via the following;
+Some components and services were made via the following;
 
 ```
 ng generate component monarchs
+ng generate component monarch-detail
+ng generate service monarch
 ```

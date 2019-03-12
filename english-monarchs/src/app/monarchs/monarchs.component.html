@@ -7,13 +7,4 @@
     <span class="badge">{{m.id}}</span> {{m.nm}} of {{m.hse}}
   </li>
 </ul>
-
-<div *ngIf="selectedMonarch">
-  <h2>{{selectedMonarch.nm | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedMonarch.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedMonarch.nm" placeholder="name"/>
-    </label>
-  </div>
-</div>
+<app-monarch-detail [monarch]="selectedMonarch"></app-monarch-detail>

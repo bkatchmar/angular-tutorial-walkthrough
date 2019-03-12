@@ -1,0 +1,9 @@
+<div *ngIf="monarch">
+  <h2>{{monarch.nm | uppercase}} Details</h2>
+  <div><span>id: </span>{{monarch.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="monarch.nm" placeholder="name"/>
+    </label>
+  </div>
+</div>

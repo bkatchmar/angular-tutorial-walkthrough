@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Monarch } from '../Monarch';
 import { MONARCHS } from '../Mock-Monarchs';
+import { MonarchService } from '../monarch.service';
 
 @Component({
   selector: "app-monarchs",
@@ -8,13 +9,19 @@ import { MONARCHS } from '../Mock-Monarchs';
   styleUrls: ["./monarchs.component.css"]
 })
 export class MonarchsComponent implements OnInit {
-  monarchs_list = MONARCHS;
+  monarchs_list: Monarch[];
   selectedMonarch: Monarch;
   onSelect(monarch: Monarch): void {
     this.selectedMonarch = monarch;
   }
 
-  constructor() { }
+  constructor(private monarchService: MonarchService) { }
 
-  ngOnInit() { }
+  getMonarchs(): void {
+    this.monarchService.getAllMonarchs().subscribe(monarchs => this.monarchs_list = monarchs);
+  }
+
+  ngOnInit() {
+    this.getMonarchs();
+  }
 }
