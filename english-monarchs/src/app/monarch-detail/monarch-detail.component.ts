@@ -14,16 +14,14 @@ export class MonarchDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private monarchService: MonarchService, private location: Location) {}
   
-  ngOnInit(): void {
-    this.getMonarch();
-  }
+  ngOnInit(): void { this.getMonarch(); }
   
   getMonarch(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.monarchService.getMonarch(id).subscribe(m => this.monarch = m);
+    this.monarchService.getMonarch(id).subscribe(m => {
+      this.monarch = m.find(x => x.id === id);
+    });
   }
 
-  goBack(): void {
-    this.location.back();
-  }
+  goBack(): void { this.location.back(); }
 }
